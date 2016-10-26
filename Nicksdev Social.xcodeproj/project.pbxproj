@@ -18,6 +18,7 @@
 		590FA3CF1DBFAA450060E1C3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3CD1DBFAA450060E1C3 /* FBSDKCoreKit.framework */; };
 		590FA3D01DBFAA450060E1C3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */; };
 		590FA3D21DBFAA560060E1C3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */; };
+		59B448551DC03EC6004CBDC7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B448541DC03EC6004CBDC7 /* FeedVC.swift */; };
 		59E4E6FF1DBEBE3900B4FA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4E6FE1DBEBE3900B4FA43 /* AppDelegate.swift */; };
 		59E4E7011DBEBE3900B4FA43 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4E7001DBEBE3900B4FA43 /* SignInVC.swift */; };
 		59E4E7041DBEBE3900B4FA43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E4E7021DBEBE3900B4FA43 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		59B448531DC01D9A004CBDC7 /* Nicksdev Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nicksdev Social.entitlements"; sourceTree = "<group>"; };
+		59B448541DC03EC6004CBDC7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		59E4E6FB1DBEBE3900B4FA43 /* Nicksdev Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nicksdev Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E4E6FE1DBEBE3900B4FA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E4E7001DBEBE3900B4FA43 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				59E4E7001DBEBE3900B4FA43 /* SignInVC.swift */,
+				59B448541DC03EC6004CBDC7 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B448551DC03EC6004CBDC7 /* FeedVC.swift in Sources */,
 				590FA3C61DBFA1590060E1C3 /* FancyField.swift in Sources */,
 				59E4E7011DBEBE3900B4FA43 /* SignInVC.swift in Sources */,
 				590FA3C41DBF8E4D0060E1C3 /* RoundButton.swift in Sources */,

@@ -19,11 +19,20 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         
+        }
         
+        
+    
+
+    // segues to be performed at startup have to be in viewDidAppear because viewDidLoad is to early
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            performSegue(withIdentifier: signInSegue, sender: nil)
+        }
     }
+
 
     
     @IBAction func fbButtonTapped(_ sender: AnyObject) {
@@ -51,10 +60,12 @@ class SignInVC: UIViewController {
             } else{
                 print("AYE: Successfully authenitcated with firebase")
                 if let user = user{
-                KeychainWrapper.se
+                    self.completeSignIn(id: user.uid)
                 }
             }
             
+        
+        
         })
     }
 
@@ -63,18 +74,29 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("AYE: User authenticated with eamil and firebase")
+                    if let user = user{
+                    self.completeSignIn(id: user.uid)
+                    }
                 } else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error != nil{
                             print("AYE: Unable to authenticate user with firebase ")
                         } else{
                             print("AYE: Successfully authenticated with firebase")
+                            if let user = user{
+                            self.completeSignIn(id: user.uid)
+                            }
                         }
                     })
                 }
             })
         }
         
+    }
+    
+    func completeSignIn(id: String) {
+         KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        performSegue(withIdentifier: signInSegue, sender: nil)
     }
 
 }
