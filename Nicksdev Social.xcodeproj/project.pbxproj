@@ -18,6 +18,8 @@
 		590FA3CF1DBFAA450060E1C3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3CD1DBFAA450060E1C3 /* FBSDKCoreKit.framework */; };
 		590FA3D01DBFAA450060E1C3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */; };
 		590FA3D21DBFAA560060E1C3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */; };
+		593E89481DC83C5B0060A0B6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E89471DC83C5B0060A0B6 /* PostCell.swift */; };
+		593E894A1DC841650060A0B6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E89491DC841650060A0B6 /* CircleView.swift */; };
 		59B448551DC03EC6004CBDC7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B448541DC03EC6004CBDC7 /* FeedVC.swift */; };
 		59E4E6FF1DBEBE3900B4FA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4E6FE1DBEBE3900B4FA43 /* AppDelegate.swift */; };
 		59E4E7011DBEBE3900B4FA43 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4E7001DBEBE3900B4FA43 /* SignInVC.swift */; };
@@ -38,6 +40,8 @@
 		590FA3CD1DBFAA450060E1C3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		593E89471DC83C5B0060A0B6 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		593E89491DC841650060A0B6 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		59B448531DC01D9A004CBDC7 /* Nicksdev Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nicksdev Social.entitlements"; sourceTree = "<group>"; };
 		59B448541DC03EC6004CBDC7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		59E4E6FB1DBEBE3900B4FA43 /* Nicksdev Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nicksdev Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,8 @@
 				590FA3C51DBFA1590060E1C3 /* FancyField.swift */,
 				590FA3C71DBFA3290060E1C3 /* FancyButton.swift */,
 				590FA3C91DBFA52C0060E1C3 /* FancyLogo.swift */,
+				593E89471DC83C5B0060A0B6 /* PostCell.swift */,
+				593E89491DC841650060A0B6 /* CircleView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 				590FA3C81DBFA3290060E1C3 /* FancyButton.swift in Sources */,
 				590FA3CA1DBFA52C0060E1C3 /* FancyLogo.swift in Sources */,
 				59E4E6FF1DBEBE3900B4FA43 /* AppDelegate.swift in Sources */,
+				593E894A1DC841650060A0B6 /* CircleView.swift in Sources */,
 				590FA3BF1DBF8A4B0060E1C3 /* FancyView.swift in Sources */,
 				590FA3C21DBF8B250060E1C3 /* Constants.swift in Sources */,
+				593E89481DC83C5B0060A0B6 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

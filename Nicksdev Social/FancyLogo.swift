@@ -17,6 +17,7 @@ class FancyLogo: UIImageView {
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 10.0
         layer.shadowOffset = CGSize(width: 4.0, height: 1.0)
+        
     }
 
 }
