@@ -60,7 +60,10 @@ class SignInVC: UIViewController {
             } else{
                 print("AYE: Successfully authenitcated with firebase")
                 if let user = user{
-                    self.completeSignIn(id: user.uid)
+                    //here we are storing user data into a dictionary so that we can show what provider the user used.
+                    // this line is different because without it being creditial it will always default to firebase so we get the creditential from our facebook sign in 
+                    let userData = ["provider": creditential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
             
@@ -75,7 +78,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("AYE: User authenticated with eamil and firebase")
                     if let user = user{
-                    self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                    self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -84,7 +88,8 @@ class SignInVC: UIViewController {
                         } else{
                             print("AYE: Successfully authenticated with firebase")
                             if let user = user{
-                            self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                            self.completeSignIn(id: user.uid, userData: userData)
                             }
                         }
                     })
@@ -94,7 +99,8 @@ class SignInVC: UIViewController {
         
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
          KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: signInSegue, sender: nil)
     }

@@ -141,11 +141,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-oy-fyK" userLabel="NavBarBg" customClass="FancyView" customModule="Nicksdev_Social" customModuleProvider="target">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="U3w-og-Ev2">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="U3w-og-Ev2">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="1yD-i7-I1F"/>
                                             <constraint firstAttribute="height" constant="25" id="6e6-Tb-Wab"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wNu-H5-WiI" appends="YES" id="xjv-Cq-Lcd"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J3-0d-xdH">
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
@@ -312,6 +316,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6v-ff-dbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wNu-H5-WiI">
+                    <connections>
+                        <action selector="signOut:" destination="NBO-25-Sah" id="j54-Uc-shQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="980" y="197.45127436281859"/>
         </scene>
