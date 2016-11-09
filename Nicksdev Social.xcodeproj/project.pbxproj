@@ -19,6 +19,7 @@
 		590FA3D01DBFAA450060E1C3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */; };
 		590FA3D21DBFAA560060E1C3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */; };
 		59315C911DCA19470010B97B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59315C901DCA19470010B97B /* DataService.swift */; };
+		59315C931DCA3C4F0010B97B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59315C921DCA3C4F0010B97B /* Post.swift */; };
 		593E89481DC83C5B0060A0B6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E89471DC83C5B0060A0B6 /* PostCell.swift */; };
 		593E894A1DC841650060A0B6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E89491DC841650060A0B6 /* CircleView.swift */; };
 		59B448551DC03EC6004CBDC7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B448541DC03EC6004CBDC7 /* FeedVC.swift */; };
@@ -42,6 +43,7 @@
 		590FA3CE1DBFAA450060E1C3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		590FA3D11DBFAA560060E1C3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		59315C901DCA19470010B97B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		59315C921DCA3C4F0010B97B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		593E89471DC83C5B0060A0B6 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		593E89491DC841650060A0B6 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		59B448531DC01D9A004CBDC7 /* Nicksdev Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nicksdev Social.entitlements"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		59E4E7141DBEC4A400B4FA43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				59315C921DCA3C4F0010B97B /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				590FA3C61DBFA1590060E1C3 /* FancyField.swift in Sources */,
 				59E4E7011DBEBE3900B4FA43 /* SignInVC.swift in Sources */,
 				59315C911DCA19470010B97B /* DataService.swift in Sources */,
+				59315C931DCA3C4F0010B97B /* Post.swift in Sources */,
 				590FA3C41DBF8E4D0060E1C3 /* RoundButton.swift in Sources */,
 				590FA3C81DBFA3290060E1C3 /* FancyButton.swift in Sources */,
 				590FA3CA1DBFA52C0060E1C3 /* FancyLogo.swift in Sources */,
