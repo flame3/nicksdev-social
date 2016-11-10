@@ -13,10 +13,12 @@ import SwiftKeychainWrapper
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImage: CircleView!
+    @IBOutlet weak var captionTF: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
     
     
     //
@@ -73,6 +75,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+            imageSelected = true
             addImage.image = image
         } else {
             print("AYE: valid image wasn't used")
@@ -80,9 +83,35 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.dismiss(animated: true, completion: nil)
         }
     
+    @IBAction func postBtnTapped(_ sender: AnyObject) {
+    }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
         present(imagePicker, animated: true, completion: nil)
+        
+        guard let caption = captionTF.text, caption != "", imageSelected == true else{
+            print("AYE: Caption must be entered")
+            return
+        }
+        guard let img = addImage.image else{
+            print("AYE: Image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2){
+            let imageUID = NSUUID().uuidString
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpeg"
+            DataService.ds.REF_POST_IMAGES.child(imageUID).put(imgData, metadata: metaData) { (metaData, error) in
+                if error != nil{
+                    print("AYE: Unable to upload image to firebase console")
+                } else{
+                    print("AYE: Successfully loaded image to firebase storage")
+                    let downloadURL = metaData?.downloadURL()?.absoluteString
+                }
+            }
+            
+        }
         
     }
     
