@@ -16,6 +16,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     
     //
@@ -50,8 +51,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: feedCellID) as? PostCell{
-            cell.configureCell(post: post)
-            return cell
+        
+            if let img = FeedVC.imageCache.object(forKey: post.imageURL as NSString){
+                cell.configureCell(post: post, img: img)
+                return cell
+            }else {
+                cell.configureCell(post: post)
+                return cell
+            }
+            
         }else {
             return PostCell()
         }
@@ -64,13 +72,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
             addImage.image = image
         } else {
             print("AYE: valid image wasn't used")
+                }
+        imagePicker.dismiss(animated: true, completion: nil)
         }
-    }
+    
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
         present(imagePicker, animated: true, completion: nil)

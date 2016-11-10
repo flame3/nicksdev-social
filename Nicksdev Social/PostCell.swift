@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCell: UITableViewCell {
 
@@ -25,13 +26,40 @@ class PostCell: UITableViewCell {
         //“Excellence is an art won by training and habituation: we not act rightly because we have virtue or excellence, but rather have these because we have acted rightly; these virtues are formed in man by doing his actions; we are we repeatedly do. Excellence, then, is not an act but a habit.”
     }
     
-    func configureCell(post: Post){
+    func configureCell(post: Post, img: UIImage? = nil){
         self.post = post
         self.captionTV.text = post.caption
         self.likesLBL.text = "\(post.likes)"
         
-    }
-
-
-
+        
+        if img != nil{
+            self.postImage.image = img
+        }else {
+                let ref = FIRStorage.storage().reference(forURL: post.imageURL)
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    
+                    if error != nil{
+                        print("AYE: Unable to download image from Firebase")
+                    } else {
+                        print("AYE: What's up ")
+                        
+                        if let imgData = data {
+                            if let img = UIImage(data: imgData){
+                                self.postImage.image = img
+                                FeedVC.imageCache.setObject(img, forKey: post.imageURL as NSString)
+                            }
+                        }
+                    }
+                })
+            
+            }
+        }
+        
+        
+        
+        
 }
+
+
+
+
