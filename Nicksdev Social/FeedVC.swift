@@ -35,6 +35,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
+            
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots{
                     print("SNAP:   \(snap)")
